@@ -8,7 +8,10 @@ git clone https://github.com/alexbarbosa1989/hotrodspringboot
 2. Execute it:
 
 ~~~
-./mvnw spring-boot:run
+mvn clean install
+~~~
+~~~
+java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
 ~~~
 
 3. Create the cache in Data Grid 8
