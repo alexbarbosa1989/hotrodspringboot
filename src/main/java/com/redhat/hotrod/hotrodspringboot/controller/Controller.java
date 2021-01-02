@@ -28,5 +28,12 @@ public class Controller {
 		String returnedValue = cache.get(cacheKey).toString();
 		return "SUCCESS "+returnedValue;
 	}
-
+	
+	@GetMapping(value = "/get-cache-value/{cacheName}/{cacheKey}", produces = {
+			"application/json; charset=UTF-8" })
+	public String getValueCache(@PathVariable String cacheName, @PathVariable String cacheKey) {
+		RemoteCache<String, String> cache = cacheMgrRemote.getCache(cacheName);
+		String returnedValue = cache.get(cacheKey).toString();
+		return "The value for key: " + cacheKey + " is: " + returnedValue;
+	}
 }
