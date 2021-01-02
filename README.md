@@ -36,8 +36,19 @@ Password: jdgUs3R
 ./bin/server.sh -n node1 
 ~~~
 
-6. Execute the springboot GET operation:
+6. Execute the web GET operation to store values in Data Grid Cache:
 
 ~~~
  curl -X GET http://localhost:8080/redhat/update-cache/sessions/cacheKey1/cacheValue1
+~~~
+
+~~~
+ curl -X GET http://localhost:8080/redhat/update-cache/sessions/cacheKey2/cacheValue2
+~~~
+
+7. Execute the web GET operation to retrieve cache value from Data Grid Cache using the Key:
+
+~~~
+curl -X GET http://localhost:8080/redhat/get-cache-value/sessions/cacheKey1
+
 ~~~
