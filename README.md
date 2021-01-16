@@ -14,7 +14,7 @@ mvn clean install
 java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
 ~~~
 
-3. Create the cache in Data Grid 8
+3. Create the cache in Data Grid 8:
 
 ~~~
 <infinispan>
