@@ -26,7 +26,7 @@ java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
     </cache-container></infinispan>
 ~~~
 
-4. Add user in Data Grid instance.
+4. Add user in Data Grid instance:
 
 ~~~
 User: jdgUser
