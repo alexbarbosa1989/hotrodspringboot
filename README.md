@@ -24,14 +24,19 @@ Password: jdgUs3R
 ${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 ~~~
 
-4. Create the cache in Data Grid 8:
+4. Start the Data Grid instance:
 
-- Via CLI:
+~~~
+./bin/server.sh -n dg1 -s server 
+~~~
+
+5. Create the cache in Data Grid 8:
+
 ~~~
 [dg1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
 ~~~
 
-- Directly in Data Grid Configuration:
+Cache looks like below:
 ~~~
 <?xml version="1.0"?>
 <infinispan xmlns="urn:infinispan:config:12.1">
@@ -42,12 +47,6 @@ ${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
         </distributed-cache>
     </cache-container>
 </infinispan>
-~~~
-
-5. Start the Data Grid instance:
-
-~~~
-./bin/server.sh -n dg1 -s server 
 ~~~
 
 6. Execute the web GET operation to store values in Data Grid Cache:
