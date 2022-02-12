@@ -31,12 +31,15 @@ java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
 ~~~
 User: jdgUser
 Password: jdgUs3R
+
+#or via CLI
+${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 ~~~
 
 5. Start the Data Grid instance:
 
 ~~~
-./bin/server.sh -n node1 
+./bin/server.sh -n dg1 -s server 
 ~~~
 
 6. Execute the web GET operation to store values in Data Grid Cache:
