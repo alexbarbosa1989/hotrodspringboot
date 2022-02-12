@@ -14,11 +14,21 @@ mvn clean install
 java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
 ~~~
 
-3. Create the cache in Data Grid 8:
+3. Add user in Data Grid instance:
+
+~~~
+User: jdgUser
+Password: jdgUs3R
+
+#or via CLI
+${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
+~~~
+
+4. Create the cache in Data Grid 8:
 
 - Via CLI:
 ~~~
-[n1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
+[dg1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
 ~~~
 
 - Directly in Data Grid Configuration:
@@ -32,16 +42,6 @@ java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
         </distributed-cache>
     </cache-container>
 </infinispan>
-~~~
-
-4. Add user in Data Grid instance:
-
-~~~
-User: jdgUser
-Password: jdgUs3R
-
-#or via CLI
-${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 ~~~
 
 5. Start the Data Grid instance:
