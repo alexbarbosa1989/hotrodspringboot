@@ -16,14 +16,22 @@ java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
 
 3. Create the cache in Data Grid 8:
 
+- Via CLI:
 ~~~
-<infinispan>
+[n1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
+~~~
+
+- Directly in Data Grid Configuration:
+~~~
+<?xml version="1.0"?>
+<infinispan xmlns="urn:infinispan:config:12.1">
     <cache-container>
-        <distributed-cache owners="2" mode="SYNC" remote-timeout="30000" name="sessions" statistics="true">
-            <transaction mode="NONE"/>
-            <expiration lifespan="-1"/>
+        <distributed-cache mode="SYNC" remote-timeout="17500" name="sessions" statistics="true">
+            <locking concurrency-level="1000" acquire-timeout="15000" striping="false"/>
+            <state-transfer timeout="60000"/>
         </distributed-cache>
-    </cache-container></infinispan>
+    </cache-container>
+</infinispan>
 ~~~
 
 4. Add user in Data Grid instance:
