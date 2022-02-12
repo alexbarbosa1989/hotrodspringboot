@@ -16,8 +16,8 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<infinispan>11.0.3.Final-redhat-00001</infinispan>
-		<infinispan.boot>2.3.3.Final-redhat-00001</infinispan.boot>
+		<infinispan>12.1.11.Final-redhat-00001</infinispan>
+		<infinispan.boot>12.1.11.Final-redhat-00001</infinispan.boot>
 	</properties>
 
 	<dependencies>
@@ -115,6 +115,11 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+        <repository>
+            <id>redhat-ga-repository</id>
+            <name>Red Hat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+        </repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -130,6 +135,12 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
+
+        <pluginRepository>
+            <id>redhat-ga-repository</id>
+            <name>Red Hat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+        </pluginRepository>
 	</pluginRepositories>
 
 </project>
