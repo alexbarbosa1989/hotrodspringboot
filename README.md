@@ -24,6 +24,9 @@ Password: jdgUs3R
 ${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 ~~~
 
+**NOTE**: You can create your own custom user and set it in the __application.properties__ file located in the resources directory (/hotrodspringboot/src/main/resources/).
+
+
 4. Start the Data Grid instance:
 
 ~~~
