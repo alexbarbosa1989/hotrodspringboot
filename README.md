@@ -36,7 +36,7 @@ ${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 [dg1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
 ~~~
 
-Cache looks like below:
+Created "sessions" cache looks like below (it could be created manually or using the Web console too):
 ~~~
 <?xml version="1.0"?>
 <infinispan xmlns="urn:infinispan:config:12.1">
