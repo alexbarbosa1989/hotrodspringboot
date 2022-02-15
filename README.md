@@ -33,7 +33,7 @@ ${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 ./bin/server.sh -n dg1 -s server 
 ~~~
 
-5. Create the cache in Data Grid 8:
+5. Create the "sessions" cache in Data Grid 8 instance:
 
 ~~~
 [dg1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
