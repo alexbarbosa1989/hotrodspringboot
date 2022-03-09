@@ -18,7 +18,9 @@
 		<java.version>11</java.version>
 		<infinispan>12.1.11.Final-redhat-00001</infinispan>
 		<infinispan.boot>12.1.11.Final-redhat-00001</infinispan.boot>
-	</properties>
+	        <!--for OCP deployment -->
+                <fabric8.generator.from>registry.redhat.io/openjdk/openjdk-11-rhel8:latest</fabric8.generator.from>
+        </properties>
 
 	<dependencies>
 		<dependency>
@@ -142,5 +144,29 @@
             <url>https://maven.repository.redhat.com/ga/</url>
         </pluginRepository>
 	</pluginRepositories>
+
+    <!-- for OCP deployment-->
+    <profiles>
+        <profile>
+          <id>openshift</id>
+          <build>
+            <plugins>
+              <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>fabric8-maven-plugin</artifactId>
+                <version>4.4.1</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>resource</goal>
+                      <goal>build</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+            </plugins>
+          </build>
+        </profile>
+    </profiles>
 
 </project>
