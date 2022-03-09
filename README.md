@@ -1,42 +1,9 @@
 # hotrodspringboot
 
-1. Clone the project:
-~~~
-git clone https://github.com/alexbarbosa1989/hotrodspringboot
-~~~
-
-2. Execute it:
+1. Create the "sessions" cache in Data Grid 8 instance:
 
 ~~~
-mvn clean install
-~~~
-~~~
-java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
-~~~
-
-3. Add user in Data Grid instance:
-
-~~~
-User: jdgUser
-Password: jdgUs3R
-
-#or via CLI
-${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
-~~~
-
-**NOTE**: You can create your own custom user and set it in the __application.properties__ file located in the resources directory (/hotrodspringboot/src/main/resources/).
-
-
-4. Start the Data Grid instance:
-
-~~~
-./bin/server.sh -n dg1 -s server 
-~~~
-
-5. Create the "sessions" cache in Data Grid 8 instance:
-
-~~~
-[dg1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
+create cache --template=org.infinispan.DIST_SYNC sessions
 ~~~
 
 Created "sessions" cache looks like below (it could be created manually or using the Web console too):
@@ -52,19 +19,50 @@ Created "sessions" cache looks like below (it could be created manually or using
 </infinispan>
 ~~~
 
-6. Execute the web GET operation to store values in Data Grid Cache:
+2. Clone the project:
+~~~
+git clone https://github.com/alexbarbosa1989/hotrodspringboot
+~~~
+
+3. Create a new project in the openshift cluster:
+~~~
+oc new-project springboot-test
+~~~
+
+4. Deploy the springboot project using the fabric8 plugin
+~~~
+mvn clean fabric8:deploy -Popenshift
+~~~
+
+5. Verify the created pod once the deployment process finish:
+~~~
+oc get pods
+NAME                           READY     STATUS      RESTARTS   AGE
+hotrodspringboot-1-deploy      0/1       Completed   0          42s
+hotrodspringboot-1-plkf7       1/1       Running     0          39s
+hotrodspringboot-s2i-1-build   0/1       Completed   0          92s
+~~~
+
+6. Check the created route
+~~~
+ oc get routes
+NAME               HOST/PORT                                           PATH      SERVICES           PORT      TERMINATION   WILDCARD
+hotrodspringboot   hotrodspringboot-springboot-test.apps-crc.testing             hotrodspringboot   8080                    None
+~~~
+
+7. Execute the web GET operation to store values in Data Grid Cache:
 
 ~~~
- curl -X GET http://localhost:8080/redhat/update-cache/sessions/cacheKey1/cacheValue1
+ curl -X GET http://hotrodspringboot-springboot-test.apps-crc.testing/redhat/update-cache/sessions/cacheKey1/cacheValue1
 ~~~
 
 ~~~
- curl -X GET http://localhost:8080/redhat/update-cache/sessions/cacheKey2/cacheValue2
+ curl -X GET http://hotrodspringboot-springboot-test.apps-crc.testing/redhat/update-cache/sessions/cacheKey2/cacheValue2
 ~~~
 
 7. Execute the web GET operation to retrieve cache value from Data Grid Cache using the Key:
 
 ~~~
-curl -X GET http://localhost:8080/redhat/get-cache-value/sessions/cacheKey1
-
+curl -X GET http://hotrodspringboot-springboot-test.apps-crc.testing/redhat/get-cache-value/sessions/cacheKey1
 ~~~
+
