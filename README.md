@@ -19,9 +19,9 @@ Created "sessions" cache looks like below (it could be created manually or using
 </infinispan>
 ~~~
 
-2. Clone the project:
+2. Clone the project openshift branch:
 ~~~
-git clone https://github.com/alexbarbosa1989/hotrodspringboot
+git clone -b openshift https://github.com/alexbarbosa1989/hotrodspringboot
 ~~~
 
 3. Create a new project in the openshift cluster:
