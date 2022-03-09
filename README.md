@@ -60,7 +60,7 @@ hotrodspringboot   hotrodspringboot-springboot-test.apps-crc.testing            
  curl -X GET http://hotrodspringboot-springboot-test.apps-crc.testing/redhat/update-cache/sessions/cacheKey2/cacheValue2
 ~~~
 
-7. Execute the web GET operation to retrieve cache value from Data Grid Cache using the Key:
+8. Execute the web GET operation to retrieve cache value from Data Grid Cache using the Key:
 
 ~~~
 curl -X GET http://hotrodspringboot-springboot-test.apps-crc.testing/redhat/get-cache-value/sessions/cacheKey1
