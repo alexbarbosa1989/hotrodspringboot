@@ -1,6 +1,6 @@
 # hotrodspringboot
 
-1. Create the "sessions" cache in Data Grid 8 instance:
+1. Create the "sessions" cache in Data Grid 8 instance, e.g., using the Data Grid CLI:
 
 ~~~
 create cache --template=org.infinispan.DIST_SYNC sessions
