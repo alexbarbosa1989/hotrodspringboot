@@ -7,6 +7,7 @@ Most of the steps remain as-is in the Red Hat Developer blog: https://developers
 **Steps Chages**
 - In step [How to deploy the Spring Boot project](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid#how_to_deploy_the_spring_boot_project):
 Instead of clone the **openshift** brach, must clone **RHDG_8.4** branch:
+
 **Old step:**
 ~~~
 git clone -b openshift https://github.com/alexbarbosa1989/hotrodspringboot
@@ -19,6 +20,7 @@ git clone -b RHDG_8.4 https://github.com/alexbarbosa1989/hotrodspringboot
 - In step [Deploy the Spring Boot application
 ](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid#deploy_the_spring_boot_application):
 Instead of using **fabric8** maven comand, should use **JKube** maven commands:
+
 **Old step:**
 ~~~
 mvn clean fabric8:deploy -Popenshift
