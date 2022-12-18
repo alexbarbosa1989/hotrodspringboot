@@ -11,8 +11,17 @@ Instead of clone the **openshift** brach, must clone **RHDG_8.4** branch:
 git clone -b RHDG_8.4 https://github.com/alexbarbosa1989/hotrodspringboot
 ~~~
 
+- In step [Deploy the Spring Boot application
+](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid#deploy_the_spring_boot_application):
+Instead of using **fabric8** maven comand, should use **JKube** maven commands:
+~~~
+mvn clean package oc:build -Popenshift
+mvn oc:apply -Popenshift
+~~~
 
-# Changes:
+The other steps remains exactly the same as in [the Red Hat Developer blog](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid)
+
+# Changes summary:
 - Upgrade to RHDG 8.4 hotrod connector. (Infinispan 14.0.2.Final-redhat-00001)
 - Upgrade to Spring Boot starter 2.7.0
 - Removed fabric8 maven plugin (Deprecated)
