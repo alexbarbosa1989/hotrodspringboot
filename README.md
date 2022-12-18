@@ -19,7 +19,7 @@ mvn clean package oc:build -Popenshift
 mvn oc:apply -Popenshift
 ~~~
 
-The other steps remains exactly the same as in [the Red Hat Developer blog](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid)
+The other steps remains exactly the same as in the [Red Hat Developer blog](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid)
 
 # Changes summary:
 - Upgrade to RHDG 8.4 hotrod connector. (Infinispan 14.0.2.Final-redhat-00001)
