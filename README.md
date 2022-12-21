@@ -19,7 +19,7 @@ git clone -b RHDG_8.4 https://github.com/alexbarbosa1989/hotrodspringboot
 
 2. In step [Deploy the Spring Boot application
 ](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid#deploy_the_spring_boot_application):
-Instead of using **fabric8** maven comand, should use **JKube** maven commands:
+Instead of using **fabric8** maven comand, should use **JKube** maven commands for aplication deployment on the Openshift environment:
 
 **Old step:**
 ~~~
