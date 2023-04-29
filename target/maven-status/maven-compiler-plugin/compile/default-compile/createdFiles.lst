@@ -1,0 +1,9 @@
+com/redhat/hotrod/hotrodspringboot/HotrodspringbootApplication.class
+com/redhat/hotrod/hotrodspringboot/controller/Controller.class
+com/redhat/hotrod/hotrodspringboot/controller/QuerySchemaBuilderImpl.class
+com/redhat/hotrod/hotrodspringboot/controller/Person.class
+com/redhat/hotrod/hotrodspringboot/ServletInitializer.class
+com/redhat/hotrod/hotrodspringboot/controller/Person$___Marshaller_9d95626b42789d9e58137bd3cf3ddd89d8cc7939140ba686c8be6d7b88cd54a0.class
+com/redhat/hotrod/hotrodspringboot/controller/InfinispanConfiguration.class
+com/redhat/hotrod/hotrodspringboot/controller/QuerySchemaBuilder.class
+META-INF/services/org.infinispan.protostream.SerializationContextInitializer
