@@ -1,6 +1,6 @@
 # hotrodspringboot
 
-There are two possible ways to execute the current project, in (Openshift)[OCP] or (On-Premise)[ON-PREM] environments.
+There are two possible ways to execute the current project, in [Openshift](#OCP) or [On-Premise](#ON-PREM) environments.
 
 # [Deployment steps (For Openshift Deployment)](#OCP):
 For current branch, most of the steps remain as-is in the Red Hat Developer blog: https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid
