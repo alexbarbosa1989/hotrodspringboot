@@ -30,8 +30,26 @@ mvn clean package oc:build -Popenshift
 mvn oc:apply -Popenshift
 ~~~
 
+3. Execute the web POST operation to store Person Object in Data Grid Cache:
+
+~~~
+curl -X POST --header 'Content-Type: application/json' -d '{ "firstName": "Luis", "lastName": "Diaz", "bornYear": "1997", "bornIn": "Colombia" }' http://localhost:8080/redhat/update-cache/sessions/key1
+~~~
+
+~~~
+curl -X POST --header 'Content-Type: application/json' -d '{ "firstName": "Sadio", "lastName": "Mané", "bornYear": "1992", "bornIn": "Senegal" }' http://localhost:8080/redhat/update-cache/sessions/key2
+~~~
+
+4. Execute the web GET operation to retrieve cache value from Data Grid Cache using the Key:
+
+~~~
+curl -X GET http://localhost:8080/redhat/get-cache-value/sessions/key1
+~~~
+
+
 The other steps remains exactly the same as in the [Red Hat Developer blog](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid)
 
+######
 # Deployment Steps (For On-Premise Execution)
 1. Clone the project:
 ~~~
@@ -85,7 +103,7 @@ Created "sessions" cache looks like below (it could be created manually or using
 </infinispan>
 ~~~
 
-6. Execute the web GET operation to store values in Data Grid Cache:
+6. Execute the web POST operation to store Person Object in Data Grid Cache:
 
 ~~~
 curl -X POST --header 'Content-Type: application/json' -d '{ "firstName": "Luis", "lastName": "Diaz", "bornYear": "1997", "bornIn": "Colombia" }' http://localhost:8080/redhat/update-cache/sessions/key1
@@ -99,7 +117,6 @@ curl -X POST --header 'Content-Type: application/json' -d '{ "firstName": "Sadio
 
 ~~~
 curl -X GET http://localhost:8080/redhat/get-cache-value/sessions/key1
-
 ~~~
 
 # Changes summary:
