@@ -2,8 +2,6 @@ package com.redhat.hotrod.hotrodspringboot.controller;
 
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;
-import org.infinispan.spring.common.provider.SpringCache;
-import org.infinispan.spring.remote.provider.SpringRemoteCacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
