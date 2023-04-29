@@ -1,6 +1,8 @@
 # hotrodspringboot
 
-# Deployment steps (For Openshift Deployment):
+There are two possible ways to execute the current project, in (Openshift)[OCP] or (On-Premise)[ON-PREM] environments.
+
+# [Deployment steps (For Openshift Deployment)](#OCP):
 For current branch, most of the steps remain as-is in the Red Hat Developer blog: https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid
 
 **In order to deploy current branch project, there should be make below described Steps Chages**
@@ -50,7 +52,7 @@ curl -X GET http://localhost:8080/redhat/get-cache-value/sessions/key1
 The other steps remains exactly the same as in the [Red Hat Developer blog](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid)
 
 ######
-# Deployment Steps (For On-Premise Execution)
+# [Deployment Steps (For On-Premise Execution)](#ON-PREM)
 1. Clone the project:
 ~~~
 git clone -b RHDG_8.4_POST https://github.com/alexbarbosa1989/hotrodspringboot
