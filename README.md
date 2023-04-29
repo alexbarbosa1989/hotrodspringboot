@@ -32,7 +32,7 @@ mvn oc:apply -Popenshift
 
 The other steps remains exactly the same as in the [Red Hat Developer blog](https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid)
 
-#Deployment Steps (For On-Premise Execution)
+# Deployment Steps (For On-Premise Execution)
 1. Clone the project:
 ~~~
 git clone -b RHDG_8.4_POST https://github.com/alexbarbosa1989/hotrodspringboot
