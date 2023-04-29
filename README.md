@@ -53,21 +53,7 @@ The other steps remains exactly the same as in the [Red Hat Developer blog](http
 
 ######
 # [Deployment Steps (For On-Premise Execution):](#deployment-steps-for-on-premise-execution)
-1. Clone the project:
-~~~
-git clone -b RHDG_8.4_POST https://github.com/alexbarbosa1989/hotrodspringboot
-~~~
-
-2. Execute it:
-
-~~~
-mvn clean install
-~~~
-~~~
-java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
-~~~
-
-3. Add user in Data Grid instance:
+1. Add user in Data Grid instance:
 
 ~~~
 User: jdgUser
@@ -80,13 +66,13 @@ ${RHDG_HOME}/bin/cli.sh user create jdgUser -p 'jdgUs3R'
 **NOTE**: You can create your own custom user and set it in the __application.properties__ file located in the resources directory (/hotrodspringboot/src/main/resources/).
 
 
-4. Start the Data Grid instance:
+2. Start the Data Grid instance:
 
 ~~~
 ./bin/server.sh -n dg1 -s server 
 ~~~
 
-5. Create the "sessions" cache in Data Grid 8 instance:
+3. Create the "sessions" cache in Data Grid 8 instance:
 
 ~~~
 [dg1@cluster//containers/default]> create cache --template=org.infinispan.DIST_SYNC sessions
@@ -103,6 +89,20 @@ Created "sessions" cache looks like below (it could be created manually or using
         </distributed-cache>
     </cache-container>
 </infinispan>
+~~~
+
+4. Clone the project:
+~~~
+git clone -b RHDG_8.4_POST https://github.com/alexbarbosa1989/hotrodspringboot
+~~~
+
+5. Compile & Execute it:
+
+~~~
+mvn clean install
+~~~
+~~~
+java -jar target/hotrodspringboot-0.0.1-SNAPSHOT.jar
 ~~~
 
 6. Execute the web POST operation to store Person Object in Data Grid Cache:
