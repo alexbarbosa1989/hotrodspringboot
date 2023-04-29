@@ -1,8 +1,8 @@
 # hotrodspringboot
 
-There are two possible ways to execute the current project, in [Openshift](#ocp) or [On-Premise](#deployment-steps-for-on-premise-execution) environments.
+There are two possible ways to execute the current project, in [Openshift](#deployment-steps-for-openshift-deployment) or [On-Premise](#deployment-steps-for-on-premise-execution) environments.
 
-# [Deployment steps (For Openshift Deployment):](#ocp)
+# [Deployment steps (For Openshift Deployment):](#deployment-steps-for-openshift-deployment)
 For current branch, most of the steps remain as-is in the Red Hat Developer blog: https://developers.redhat.com/articles/2022/05/31/integrate-spring-boot-application-red-hat-data-grid
 
 **In order to deploy current branch project, there should be make below described Steps Chages**
