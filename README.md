@@ -2,7 +2,7 @@
 
 1. Clone the project:
 ~~~
-git clone https://github.com/alexbarbosa1989/hotrodspringboot
+git clone -b main https://github.com/alexbarbosa1989/hotrodspringboot
 ~~~
 
 2. Execute it:
