@@ -15,12 +15,12 @@
 	<description>Demo project for Integration Data Grid Spring Boot</description>
 
 	<properties>
-		<java.version>11</java.version>
-		<infinispan>14.0.2.Final-redhat-00001</infinispan>
-		<infinispan.boot>14.0.2.Final-redhat-00001</infinispan.boot>
+		<java.version>17</java.version>
+		<infinispan>14.0.30.Final-redhat-00001</infinispan>
+		<infinispan.boot>14.0.30.Final-redhat-00001</infinispan.boot>
                 <!--for OCP deployment -->
                 <version.jkube.openshift.maven.plugin>1.10.1</version.jkube.openshift.maven.plugin>
-                <jkube.generator.from>registry.redhat.io/ubi8/openjdk-11:latest</jkube.generator.from>
+                <jkube.generator.from>registry.redhat.io/ubi8/openjdk-17:latest</jkube.generator.from>
         </properties>
 
 	<dependencies>
